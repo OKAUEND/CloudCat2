@@ -907,7 +907,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 768872783}
-  - component: {fileID: 768872785}
   - component: {fileID: 768872784}
   m_Layer: 0
   m_Name: SectionArea
@@ -940,31 +939,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8c75a28eba44344a6ab155983e9bdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &768872785
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 768872782}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!4 &837637683 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4930498118952744, guid: 7816bf15d72ec1645bde2cc7197d6a69,
@@ -1465,7 +1439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01442f8b2e719ef4f96a1e4b237835ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChangeArea: {fileID: 768872783}
+  SectionArea: {fileID: 768872783}
   RectWidth: 55
   RectHeight: 5
   ColliderDepth: 10
