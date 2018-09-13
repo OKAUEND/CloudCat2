@@ -42,12 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
-    uniqueID: 471104779
-    locked: 0
   - name: Bullding
     uniqueID: 2061717055
     locked: 0
   - name: Gate
     uniqueID: 440394437
+    locked: 0
+  - name: Player
+    uniqueID: 471104779
     locked: 0

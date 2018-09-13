@@ -5,8 +5,8 @@ using UnityEngine;
 public class SectionController : MonoBehaviour {
 
     // セクションのカメラ範囲制御
-    public Transform SectionArea;
-    public float rect_width, rect_height, collider_depth;
+    public Transform ChangeArea;
+    public float RectWidth, RectHeight, ColliderDepth;
 
     private Rect SectionRect;
 
@@ -19,15 +19,15 @@ public class SectionController : MonoBehaviour {
        //globalManager = GlobalManager.getInstance();
 
        // セクション範囲定義
-       SectionRect = new Rect(SectionArea.position.x, SectionArea.position.y, rect_width, rect_height);
+       SectionRect = new Rect(ChangeArea.position.x, ChangeArea.position.y, RectWidth, RectHeight);
 
         // セクション判定用オブジェクトに範囲を設定
-        SectionArea.GetComponent<SectionArea>().SetSectionRect(SectionRect);
+        ChangeArea.GetComponent<SectionArea>().SetSectionRect(SectionRect);
 
         // CameraControllerにセクション範囲を渡すための判定定義
-        SectionArea.transform.position = new Vector3(SectionRect.center.x, SectionRect.center.y, transform.position.z);
-        BoxCollider2D boxCollider = SectionArea.GetComponent<BoxCollider2D>();
-        boxCollider.size = new Vector3(SectionRect.width, SectionRect.height, collider_depth);
+        ChangeArea.transform.position = new Vector3(SectionRect.center.x, SectionRect.center.y, transform.position.z);
+        BoxCollider2D boxCollider = ChangeArea.GetComponent<BoxCollider2D>();
+        boxCollider.size = new Vector3(SectionRect.width, SectionRect.height, ColliderDepth);
     }
 
     void OnDrawGizmos()

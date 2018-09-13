@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SectionArea: MonoBehaviour {
+public class SectionArea : MonoBehaviour {
 
     private Rect SectionRect;
     private CameraController cameraController;
@@ -15,14 +15,23 @@ public class SectionArea: MonoBehaviour {
     {
         this.SectionRect = rect;
         cameraController = GameObject.Find("Camera").GetComponent<CameraController>();
+        Debug.Log("Rectセッティング");
         //cameraController.SetSectionRect(SectionRect);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (TagUtility.getParentTagName(collision.gameObject.tag) == "Player")
+    //    {
+    //        Debug.Log("当たり判定OK");
+    //        cameraController.SetSectionRect(SectionRect);
+    //    }
+    //}
+
+    public void CommitSectionRect()
     {
-        if (TagUtility.getParentTagName(collision.gameObject.tag) == "Player")
+        if(SectionRect != null)
         {
-            Debug.Log("当たり判定OK");
             cameraController.SetSectionRect(SectionRect);
         }
     }
