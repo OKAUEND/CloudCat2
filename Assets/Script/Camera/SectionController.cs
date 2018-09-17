@@ -5,8 +5,11 @@ using UnityEngine;
 public class SectionController : MonoBehaviour {
 
     // セクションのカメラ範囲制御
-    public Transform SectionArea;
-    public float RectWidth, RectHeight, ColliderDepth;
+    [SerializeField]
+    private Transform SectionArea;
+
+    [SerializeField]
+    private float RectWidth, RectHeight, ColliderDepth;
 
     private Rect SectionRect;
 

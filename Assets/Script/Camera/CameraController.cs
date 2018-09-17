@@ -35,8 +35,9 @@ public class CameraController : MonoBehaviour
 
         // カメラ描画範囲の上下左右を取得
         float distance = Vector3.Distance(mainCamera.transform.position, Player.transform.position);
-        bottom_left = mainCamera.GetComponent<Camera>().ViewportToWorldPoint(new Vector3(0, 0, 2));
-        top_right = mainCamera.GetComponent<Camera>().ViewportToWorldPoint(new Vector3(1, 1, 2));
+        Debug.Log(distance.ToString());
+        bottom_left = mainCamera.GetComponent<Camera>().ViewportToWorldPoint(new Vector3(LeftX, LeftY, 2));
+        top_right = mainCamera.GetComponent<Camera>().ViewportToWorldPoint(new Vector3(RightX, RightY, 2));
         top_left = new Vector3(bottom_left.x, top_right.y, bottom_left.z);
         bottom_right = new Vector3(top_right.x, bottom_left.y, top_right.z);
 

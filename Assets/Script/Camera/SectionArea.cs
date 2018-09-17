@@ -15,25 +15,21 @@ public class SectionArea : MonoBehaviour {
     {
         this.SectionRect = rect;
         cameraController = GameObject.Find("Camera").GetComponent<CameraController>();
-        Debug.Log("Rectセッティング");
+       
         //cameraController.SetSectionRect(SectionRect);
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (TagUtility.getParentTagName(collision.gameObject.tag) == "Player")
-    //    {
-    //        Debug.Log("当たり判定OK");
-    //        cameraController.SetSectionRect(SectionRect);
-    //    }
-    //}
-
     public void CommitSectionRect()
     {
-        if(SectionRect != null)
+        if(IsRectNull(SectionRect))
         {
             cameraController.SetSectionRect(SectionRect);
         }
+    }
+
+    private bool IsRectNull<T>(T rect)
+    {
+        return rect != null;
     }
 
 }
