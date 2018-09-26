@@ -6,16 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class StageSelectEvent : MonoBehaviour {
 
-    //// Use this for initialization
-    //void Start () {
-
-    //}
-
-    //// Update is called once per frame
-    //void Update () {
-
-    //}
-
 
     private const string ErrorMessage = "ステージデータを参照できません。";
 
@@ -31,21 +21,23 @@ public class StageSelectEvent : MonoBehaviour {
 
     public void OnClickStageSelect()
     {
-        OnSceneTransition(IsStageName(GetObjectName()));
+        var StageID = StageData.SearchStageID(GetStagePointName());
+        OnSceneTransition(StageID);
     }
-
+     
     private void OnSceneTransition(string SceenID)
     {
         Debug.Log(SceenID);
         SceneManager.LoadSceneAsync(SceenID);
     }
 
-    private string IsStageName(string Name)
+    public void OnPointEnterStagePoint()
     {
-        return StageData.StageNameList.GetOrDefault(Name, ErrorMessage);
+
+       
     }
 
-    private string GetObjectName()
+    private string GetStagePointName()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
