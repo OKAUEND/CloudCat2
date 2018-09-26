@@ -9,7 +9,12 @@ public class StageSelectEvent : MonoBehaviour {
 
     private const string ErrorMessage = "ステージデータを参照できません。";
 
-    //GameObject[] StagePoints;
+    private SelectSceneUIController UIScript;
+
+    private void Start()
+    {
+        UIScript = GameObject.FindGameObjectWithTag("UI").GetComponent<SelectSceneUIController>();
+    }
 
     public void OnClickStagePointOne()
     {
@@ -33,8 +38,10 @@ public class StageSelectEvent : MonoBehaviour {
 
     public void OnPointEnterStagePoint()
     {
-
-       
+        var Name = StageData.SearchStageName(GetStagePointName());
+        var Desc = StageData.SearchStageDesc(GetStagePointName());
+        UIScript.ShowStageName(Name);
+        UIScript.ShowStageDesc(Desc);
     }
 
     private string GetStagePointName()

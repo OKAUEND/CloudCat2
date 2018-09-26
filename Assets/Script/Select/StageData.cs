@@ -39,7 +39,12 @@ public class StageData : MonoBehaviour
 
     public static string SearchStageName(string ObjectName)
     {
-        return StageData.StageIDs.GetOrDefault(ObjectName);
+        return StageData.StageNameList.GetOrDefault(ObjectName);
+    }
+
+    public static string SearchStageDesc(string ObjectName)
+    {
+        return StageData.StageDescList.GetOrDefault(ObjectName);
     }
 
     private Dictionary<string, string> CreateStageIDs()
