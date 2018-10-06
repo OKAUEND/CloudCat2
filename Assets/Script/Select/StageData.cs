@@ -6,6 +6,9 @@ using UnityEngine;
 public class StageData : MonoBehaviour
 {
 
+
+
+
     public enum CompleteFlag
     {
         None = 0,

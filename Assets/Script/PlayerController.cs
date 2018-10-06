@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
     //float runSpeed = 0.5f;
     //float Scroll = 20.0f;
 
+    private Rect MobileAreaRect;
 
     // Use this for initialization
     void Start () {
@@ -52,5 +53,10 @@ public class PlayerController : MonoBehaviour {
     private bool IsMaxSpeed(float speedx)
     {
         return speedx < maxWalkSpeed;
+    }
+
+    public void SetMobileAreaRect(Rect rect)
+    {
+        MobileAreaRect = rect;
     }
 }

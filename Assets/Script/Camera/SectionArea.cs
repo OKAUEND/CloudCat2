@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Script.Common;
 
 public class SectionArea : MonoBehaviour {
 
@@ -21,16 +22,11 @@ public class SectionArea : MonoBehaviour {
 
     public void CommitSectionRect()
     {
-        if(IsRectNull(SectionRect))
+        if(RectExtra.IsRectNull(SectionRect))
         {
             cameraController.SetSectionRect(SectionRect);
         }
+        
     }
-
-    private bool IsRectNull<T>(T rect)
-    {
-        return rect != null;
-    }
-
 }
 

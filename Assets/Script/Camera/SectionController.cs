@@ -18,9 +18,6 @@ public class SectionController : MonoBehaviour {
 
     void Start()
     {
-       //マネージャ取得
-       //globalManager = GlobalManager.getInstance();
-
        // セクション範囲定義
        SectionRect = new Rect(SectionArea.position.x, SectionArea.position.y, RectWidth, RectHeight);
 
