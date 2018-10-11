@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Assets.Script.Common
+namespace Assets.Script
 {
-    class RectExtra
+    static class RectExtra
     {
-        public static bool IsRectNull<T>(T rect)
+        public static bool IsRectNull<T>(this T rect)
         {
             return rect != null;
         }

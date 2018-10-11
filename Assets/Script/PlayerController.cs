@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         int PushKey = 0;
-        //Vector3 moveVector = Vector3.zero;
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -58,5 +57,10 @@ public class PlayerController : MonoBehaviour {
     public void SetMobileAreaRect(Rect rect)
     {
         MobileAreaRect = rect;
+    }
+
+    public void MovePosition(Vector3 position)
+    {
+        this.transform.position = position;
     }
 }
