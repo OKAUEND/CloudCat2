@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
     //float runSpeed = 0.5f;
     //float Scroll = 20.0f;
 
-    private Rect MobileAreaRect;
+    private bool Pausing;
 
     // Use this for initialization
     void Start () {
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
         int PushKey = 0;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && (Player2D.velocity.y == 0))
         {
             this.Player2D.AddForce(transform.up * this.JumpForce);
             Debug.Log("ジャンプ！");
@@ -54,13 +54,23 @@ public class PlayerController : MonoBehaviour {
         return speedx < maxWalkSpeed;
     }
 
-    public void SetMobileAreaRect(Rect rect)
+    private bool IsPausing(bool _pausing)
     {
-        MobileAreaRect = rect;
+        return Pausing == true;
     }
 
     public void MovePosition(Vector3 position)
     {
         this.transform.position = position;
+    }
+
+    public void OnPause()
+    {
+        Pausing = true;
+    }
+
+    public void OnResume()
+    {
+        Pausing = false;
     }
 }
