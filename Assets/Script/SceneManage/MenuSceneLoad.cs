@@ -10,10 +10,15 @@ public class MenuSceneLoad : MonoBehaviour {
 
     private bool MenuLoad;
 
+    private Pausing _Pausing;
+
 	// Use this for initialization
 	void Start () {
         SceneManager.sceneLoaded += OnSceneLoad;
         SceneManager.sceneUnloaded += OnSceneUnload;
+
+        _Pausing = GameObject.Find("PauseManager").GetComponent<Pausing>();
+
 	}
 	
 	// Update is called once per frame
@@ -29,6 +34,7 @@ public class MenuSceneLoad : MonoBehaviour {
     private void OnSceneLoad(Scene current,LoadSceneMode mode)
     {
         //GameSceneのGameObjectを停止させる
+        _Pausing.SetPause();
     }
 
     private void OnSceneUnload(Scene current)
@@ -36,17 +42,12 @@ public class MenuSceneLoad : MonoBehaviour {
         MenuLoad = false;
 
         //GameSceneのポーズ状態を解除
-        StopGameObject();
+        _Pausing.SetResume();
 
     }
 
     private void OnDestroy()
     {
         SceneManager.sceneUnloaded -= OnSceneUnload;
-    }
-
-    private void StopGameObject()
-    {
-
     }
 }
