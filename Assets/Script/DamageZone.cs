@@ -23,11 +23,11 @@ public class DamageZone : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        //if(!IsTagPlayer(collision.tag))
-        //{
-        //    return;
-        //}
-        
+        if (!IsTagPlayer(collision.tag))
+        {
+            return;
+        }
+
         StartCoroutine(MonoBehaviourExtensions.DelayMethod(ReturnSecondes, () =>
         {
             //Playerオブジェクトの移動メソッドを呼び出し
