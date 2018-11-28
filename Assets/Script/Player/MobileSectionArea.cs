@@ -19,11 +19,4 @@ public class MobileSectionArea : MonoBehaviour {
         MoblieAreaRect = rect;
     }
 
-    public void CommitMobileArea()
-    {
-        if (RectExtra.IsRectNull(MoblieAreaRect))
-        {
-            PlayerScript.SetMobileAreaRect(MoblieAreaRect);
-        }
-    }
 }

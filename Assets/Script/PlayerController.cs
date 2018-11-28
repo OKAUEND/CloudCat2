@@ -14,13 +14,22 @@ public class PlayerController : MonoBehaviour {
 
     private Rect MobileAreaRect;
 
+    public bool ContorolMode { get; set; }
+
     // Use this for initialization
     void Start () {
         Player2D = GetComponent<Rigidbody2D>();
-	}
+        ContorolMode = true;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
+        if(!ContorolMode)
+        {
+            return;
+        }
+
         int PushKey = 0;
 
         if (Input.GetKeyDown(KeyCode.Space) && this.Player2D.velocity.y == 0)
@@ -52,11 +61,6 @@ public class PlayerController : MonoBehaviour {
     private bool IsMaxSpeed(float speedx)
     {
         return speedx < maxWalkSpeed;
-    }
-
-    public void SetMobileAreaRect(Rect rect)
-    {
-        MobileAreaRect = rect;
     }
 
     public void MovePosition(Vector3 position)

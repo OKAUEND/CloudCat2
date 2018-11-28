@@ -16,7 +16,6 @@ public class CameraAreaChange : MonoBehaviour {
         {
             Debug.Log("当たり判定OK");
             SectionArea.GetComponent<SectionArea>().CommitSectionRect();
-            MobileArea.GetComponent<MobileSectionArea>().CommitMobileArea();
         }
     }
 }

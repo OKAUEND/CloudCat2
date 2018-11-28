@@ -28,6 +28,7 @@ public class SectionController : MonoBehaviour {
         SectionArea.transform.position = new Vector3(SectionRect.center.x, SectionRect.center.y, transform.position.z);
         //BoxCollider2D boxCollider = ChangeArea.GetComponent<BoxCollider2D>();
         //boxCollider.size = new Vector3(SectionRect.width, SectionRect.height, ColliderDepth);
+        
     }
 
     void OnDrawGizmos()

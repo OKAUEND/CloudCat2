@@ -28,11 +28,15 @@ public class DamageZone : MonoBehaviour {
             return;
         }
 
+        PlayerScript.ContorolMode = false;
+
         StartCoroutine(MonoBehaviourExtensions.DelayMethod(ReturnSecondes, () =>
         {
             //Playerオブジェクトの移動メソッドを呼び出し
             //Player.transform.position = new Vector3(-8f, -1.380f, 0);
             PlayerScript.MovePosition(ReturnPoint);
+
+            PlayerScript.ContorolMode = true;
         }));
 
         //Debug.Log("落下");
@@ -40,8 +44,7 @@ public class DamageZone : MonoBehaviour {
 
         //Playerへダメージ処理
 
-        //Cameraオブジェクトの移動メソッドを呼び出し
-        //Camera.transform.position = new Vector3(0.8f, 0f, -10f);
+
     }
 
     private bool IsTagPlayer(string tag)

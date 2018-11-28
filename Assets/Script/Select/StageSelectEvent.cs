@@ -60,4 +60,10 @@ public class StageSelectEvent : MonoBehaviour {
 
         return hit.collider.gameObject.name;
     }
+
+    public void ExitPointer()
+    {
+        UIScript.ShowStageName("");
+        UIScript.ShowStageDesc("");
+    }
 }
